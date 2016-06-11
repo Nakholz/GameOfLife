@@ -5,7 +5,7 @@
 ** Login : arnhol_m
 **
 ** Started on  Tue Jun  9 14:41:02 2015 Martin Arnholz
-** Last update Wed May 18 13:49:43 2016 
+** Last update Sat Jun 11 19:39:58 2016 
 */
 
 #include <time.h>
@@ -18,19 +18,18 @@ char    **my_rand_star(int star, char **tab, char **av)
   int   j;
 
   srand(time(0));
-  while (star > 0)
-    {
-      i = rand() % my_getnbr(av[1]);
-      if (i == 0)
-        i++;
-      j = rand() % my_getnbr(av[2]);
-      if (j == 0)
-        j++;
-      if (tab[j][i] == '*')
-        star++;
-      else
-        tab[j][i] = '*';
-      star--;
-    }
+  while (star > 0){
+    i = rand() % my_getnbr(av[1]);
+    if (i == 0)
+      i++;
+    j = rand() % my_getnbr(av[2]);
+    if (j == 0)
+      j++;
+    if (tab[j][i] == '*')
+      star++;
+    else
+      tab[j][i] = '*';
+    star--;
+  }
   return (tab);
 }

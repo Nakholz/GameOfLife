@@ -5,7 +5,7 @@
 ## Login : arnhol_m
 ## 
 ## Started on  Tue Jun  9 14:32:15 2015 Martin Arnholz
-## Last update Wed May 18 13:50:43 2016 
+## Last update Sat Jun 11 19:42:49 2016 
 ##
 
 CC	= gcc
@@ -23,7 +23,7 @@ CFLAGS	= -W -Wall -Wextra
 
 OBJS	= $(SRCS:.c=.o)
 
-NAME	= game_of_life
+NAME	= turing
 
 all: $(NAME)
 

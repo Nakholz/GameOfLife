@@ -5,7 +5,7 @@
 ** Login : arnhol_m
 ** 
 ** Started on  Tue Jun  9 14:42:25 2015 Martin Arnholz
-** Last update Wed May 18 13:49:54 2016 
+** Last update Sat Jun 11 19:40:26 2016 
 */
 
 #include <unistd.h>
@@ -36,22 +36,20 @@ char    **my_tab_remp2(char **tab, char **av)
 
   a = 0;
   i = 1;
-  while (i < my_getnbr(av[2]) + 1)
-    {
+  while (i < my_getnbr(av[2]) + 1){
       a = 0;
-      while (a < my_getnbr(av[1]) + 2)
-        {
-          if (a == 0)
-            tab[i][a] = '|';
-          else
+      while (a < my_getnbr(av[1]) + 2){
+	if (a == 0)
+	  tab[i][a] = '|';
+	else
             tab[i][a] = ' ';
-          a++;
-        }
+	a++;
+      }
       a--;
       tab[i][a] = '|';
       tab[i][a + 1] = 0;
       i++;
-    }
+  }
   tab = my_tab_remp3(tab, av, i);
   return (tab);
 }
@@ -64,18 +62,16 @@ char    **my_tab_remp(char **av, int x)
   a = 1;
   if ((tab = malloc(sizeof(char*) * my_getnbr(av[2]) + 100)) == NULL)
     my_exit(1);
-  while (x < my_getnbr(av[2]) + 3)
-    {
-      if ((tab[x] = malloc(sizeof(char) * my_getnbr(av[1]) + 100)) == NULL)
-        my_exit(1);
-      x++;
-    }
+  while (x < my_getnbr(av[2]) + 3){
+    if ((tab[x] = malloc(sizeof(char) * my_getnbr(av[1]) + 100)) == NULL)
+      my_exit(1);
+    x++;
+  }
   tab[0][0] = '+';
-  while (a < my_getnbr(av[1]) + 1)
-    {
-      tab[0][a] = '-';
-      a++;
-    }
+  while (a < my_getnbr(av[1]) + 1){
+    tab[0][a] = '-';
+    a++;
+  }
   tab[0][a] = '+';
   a++;
   tab[0][a] = 0;
